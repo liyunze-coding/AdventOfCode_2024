@@ -7,7 +7,8 @@
 ## My personal goals
 
 - To complete the puzzles [on my livestreams](https://twitch.tv/RythonDev)
-- Use less programming languages more often
+- Avoid usage of ChatGPT, Github Copilot and other LLMs (or to use it as little as possible)
+- Use less familiar programming languages more often
 - Programming language goals:
   - [x] Python
   - [x] Go
