@@ -66,12 +66,7 @@ func reportSafe(report []int) (bool, int) {
 				break
 			}
 		}
-
 	}
-
-	// if valid {
-	// 	fmt.Printf("%v\n", report)
-	// }
 
 	return valid, errorNum
 }
@@ -79,11 +74,11 @@ func reportSafe(report []int) (bool, int) {
 func remove(slice []int, s int) []int {
 	var newSlice []int
 
+	// for loop, append only if the index is not specified index 's'
 	for i, num := range slice {
 		if i != s {
 			newSlice = append(newSlice, num)
 		}
-
 	}
 
 	return newSlice
@@ -91,8 +86,8 @@ func remove(slice []int, s int) []int {
 
 func main() {
 	lines := readfile("../input.txt")
-	fmt.Printf("file size %d\n", len(lines))
 
+	// final answer
 	x := 0
 
 	for i := 0; i < len(lines)-1; i++ {

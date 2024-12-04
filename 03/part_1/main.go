@@ -43,8 +43,6 @@ func main() {
 		res += num1 * num2
 	}
 
-	fmt.Printf("%v\n", matches)
-
 	// convert slices string -> int
-	fmt.Printf("\n%d", res)
+	fmt.Printf("%d", res)
 }

@@ -27,13 +27,14 @@ func main() {
 	res := 0
 	addProduct := true
 
-	// convert [1] [2] to int, multiply
+	// don't multiple after don't(); continue after do()
 	for _, slice := range matches {
 		if slice[0] == "don't()" {
 			addProduct = false
 		} else if slice[0] == "do()" {
 			addProduct = true
 		} else if addProduct {
+			// convert [1] [2] to int, multiply
 			num1, err := strconv.Atoi(slice[1])
 
 			if err != nil {

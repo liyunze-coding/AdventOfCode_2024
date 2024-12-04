@@ -34,15 +34,13 @@ func convertStringArrayToIntArray(stringArray []string) []int {
 	return t2
 }
 
-func reportSafe(report []int) (bool, int) {
+func reportSafe(report []int) bool {
 	increasing := false
 	decreasing := false
 	valid := true
-	errorNum := -1
 
 	for i := 0; i < len(report)-1; i++ {
 		if report[i] == report[i+1] {
-			errorNum = i
 			valid = false
 			break
 		}
@@ -52,7 +50,6 @@ func reportSafe(report []int) (bool, int) {
 
 			if report[i]-report[i+1] > 3 || increasing {
 				valid = false
-				errorNum = i
 				break
 			}
 		}
@@ -62,41 +59,32 @@ func reportSafe(report []int) (bool, int) {
 
 			if report[i+1]-report[i] > 3 || decreasing {
 				valid = false
-				errorNum = i
 				break
 			}
 		}
-
 	}
 
-	if valid {
-		fmt.Printf("%v\n", report)
-	}
-
-	return valid, errorNum
-}
-
-func remove(slice []int, s int) []int {
-	return append(slice[:s], slice[s+1:]...)
+	return valid
 }
 
 func main() {
+	// returns slice of file content by each line
 	lines := readfile("../input.txt")
-	fmt.Printf("file size %d\n", len(lines))
 
+	// x = final answer
 	x := 0
 
 	for i := 0; i < len(lines)-1; i++ {
+		// replace all \r with ""
 		line := strings.Replace(lines[i], "\r", "", -1)
 
+		// each line, split by " "
 		line_array := strings.Split(line, " ")
 
 		// convert each char into integer
 		numArray := convertStringArrayToIntArray(line_array)
 
-		result, _ := reportSafe(numArray)
-
-		if result {
+		if reportSafe(numArray) {
 			x++
 		}
 	}
