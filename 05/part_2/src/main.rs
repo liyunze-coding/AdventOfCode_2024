@@ -80,7 +80,7 @@ fn main() {
     let lines: Vec<&str> = file_content.split("\n").collect();
 
     let mut graph: HashMap<u32, Vec<u32>> = HashMap::new();
-    // let mut updates: Vec<Vec<u32>> = vec![];
+
     let mut result: u32 = 0;
 
     for line in lines.iter() {
@@ -116,8 +116,6 @@ fn main() {
             }
 
             if violated {
-                // let mid = update_integers[update_integers.len() / 2];
-                // result += mid;
                 let new_vector: Vec<u32> = rearrange(&update_integers, &graph);
 
                 let mid = new_vector[new_vector.len() / 2];
