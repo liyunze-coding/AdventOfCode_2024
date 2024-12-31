@@ -12,9 +12,9 @@
 - Programming language goals:
   - [x] Python
   - [x] Go
-  - [ ] Rust
-  - [ ] C#
-  - [ ] Typescript
+  - [x] Rust
+  - [x] C#
+  - [x] Typescript
   - [ ] Java
   - [ ] Kotlin
   - [ ] C++
